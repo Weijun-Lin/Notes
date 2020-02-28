@@ -511,7 +511,7 @@ void semSignalB(semaphore s)
 
 **信号量机制示例**
 
-![](./img/part_2./c_5/semaphoreExample.jpg)
+![](./img/part_2/c_5/semaphoreExample.jpg)
 
 ##### 互斥
 
