@@ -2,7 +2,7 @@
 
 > 2020-2-27 Joke-Lin
 >
-> [个人博客查看（Github不支持Markdown数学公式）](https://joke-lin.top/os/tutorial%20&%20note/2020/02/28/Operating-System-Internals-and-Design-Principles-8th-Note/)
+> [个人博客查看（Github不支持Markdown数学公式）](https://joke-lin.top/2020/02/28/2020-02-28-Operating-System-Internals-and-Design-Principles-8th-Note/)
 
 操作系统是管理计算机硬件与软件资源的系统软件，同时也是计算机系统的内核与基石。操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务。操作系统也提供一个让用户与系统交互的操作界面。—— 维基百科
 

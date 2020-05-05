@@ -41,17 +41,24 @@ $L(A)=\{w|\delta^\Lambda(q_0,w) \bigcap F \neq \emptyset\}$
 
  - $NFA \rightarrow DFA$
 
-   将状态变为NFA子集合（将每个子集看作一个整体）
+   将状态变为NFA子集合（子集构造法，将每个子集看作一个整体）
 
-对每一个集合$S\in Q_N$ 以及$\sum$ 中每个符号 $a$ 有：
+子集构造法如下：
 
-$\delta_D(S,a)=\bigcup_{p \in S}\delta_N(p,a)$ 具体证明见PDF中文版P56
+设定$NFA：N = (Q_N,\sum,\delta_N,q_0,F_N)$，以及$DFA：D = (Q_D,\sum,\delta_D,\{q_0\},F_D)$，D的初始状态为N开始状态的集合表示，其他部分如下：
 
-#### 4.带$\epsilon$转移的自动机（接受$\epsilon$的NFA）
+- $Q_D$ 是 $Q_N$ 的子集的集合，即幂集合，但很多为不可达，所以状态数远小于$2^n$
+- $F_D$ 是使得 $S \bigcap F_N \neq \emptyset$ 的 $Q_N$ 的子集合的S的集合
 
-##### $\epsilon$闭包：
+- 对每一个集合$S\subseteq Q_N$ 以及$\sum$ 中每个符号 $a$ 有：
 
-**ECLOSE(q)**: q和所有从q开始$\epsilon$转移所达到的状态
+	$\delta_D(S,a)=\bigcup_{p \in S}\delta_N(p,a)$ 具体证明见PDF中文版P42
+
+#### 4.带 $\epsilon$ 转移的自动机（接受 $\epsilon$ 的NFA）
+
+##### $\epsilon$ 闭包：
+
+**ECLOSE(q)**: q和所有从q开始 $\epsilon$ 转移所达到的状态
 
 ##### $\epsilon-NFA \Rightarrow DFA$
 
@@ -60,7 +67,7 @@ $\delta_D(S,a)=\bigcup_{p \in S}\delta_N(p,a)$ 具体证明见PDF中文版P56
 3. $q_D=ECLOSE(q_0)$
 4. $F_D=\{S|S\in Q_D \& S \bigcap F_E \neq \emptyset\}$
 5. 定义$\delta_D(s,a)$
-   - $s = \{p_1...p_k\}$
+   - $s = \{p_1...p_k\}$	
    - $\bigcup_{i=1}^k \delta_E(p_i,a)\Rightarrow\{r_1...r_m\}$
    - $\delta_D(s,a)=\bigcup_{j=1}^m ECLOSE(r_j)$
 
@@ -88,13 +95,13 @@ $\delta_D(S,a)=\bigcup_{p \in S}\delta_N(p,a)$ 具体证明见PDF中文版P56
 
       $L(E)=L(E)$
 
-3. 语言类有两个重要特性：决定性和封闭性
+3. 语言类有两个重要特性：**决定性**和**封闭性**
 
-4. 判断正则语言的无穷性：
+4. 判断正则语言的**无穷性**：
 
-   只要有在$[n,2n-1]$长度的字符串被接受（n 为状态个数）
+   只要有在$[n,2n-1]$长度的字符串被接受（n 为状态个数）（使用鸽巢原理与克林闭包证明）
 
-5. 正则语言的泵引理：（可用于判断一个语言不是正则语言 必要条件）
+5. 正则语言的**泵引理**：（可用于判断一个语言不是正则语言 **必要条件**）
 
    存在一个数 n 对任意的字符串 w，$|w|>=n$，可以表示为$w=xyz$满足
 
@@ -130,10 +137,14 @@ $\delta_D(S,a)=\bigcup_{p \in S}\delta_N(p,a)$ 具体证明见PDF中文版P56
 
 12. RE与DFA转换：
 
-![](./img/1.png)
-![](./img/2.png)
-![](./img/3.png)
-![](./img/4.png)
+<img src="./img/1.png" style="zoom:50%;" />
+
+<img src="./img/2.png" style="zoom:50%;" />
+
+<img src="./img/3.png" style="zoom:50%;" />
+
+<img src="./img/4.png" style="zoom:50%;" />
+
 
 12. DFA 到RE转换：
     - 首先将所有状态从1开始编号
