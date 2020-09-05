@@ -1141,6 +1141,10 @@ $$
 \iiint_D f(x,y,z) dV = \iint_D dxdy \int_{\phi_2(x,y)}^{\phi_2(x,y)} f(x,y,z) dz = \int_g^h dz\iint_{D_z} f(x,y,z) dxdy
 $$
 
+**对称性**：积分区域关于某条线对称，且其被积函数关于此线也有某种对称性的运用
+
+**轮换对称性**：[百度百科-轮换对称性](https://baike.baidu.com/item/%E7%A7%AF%E5%88%86%E8%BD%AE%E6%8D%A2%E5%AF%B9%E7%A7%B0%E6%80%A7#2)
+
 ### 6.2 偏微商
 
 #### 偏微商与全微分
@@ -1834,7 +1838,7 @@ $$
 
 斯托克斯公式的==物理意义==，环流量和旋度
 
-公式左边代表的就是环流量（之前就提到过 矢量的第二类曲线积分），公式右边代表的是旋度
+公式左边代表的就是环流量（之前就提到过 矢量的第二类曲线积分），公式右边代表的是旋度，所以旋度的大小（模）也可以称为环流量面密度
 
 旋度是用来表示一个矢量场在各处各方向的的涡旋程度，旋度的定义为：
 $$
@@ -2194,9 +2198,9 @@ $$
 
 #### 基本概念
 
-==初等函数的微商还是仍然是初等函数，但是初等函数的积分不一定是初等函数==。所谓积分就是和的极限，即无限项**连续**相加，而级数为函数无限项**离散**相加，所以从本质上看，这两者有共同点，而且连续和离散之间是可以相互转换的
+<u>初等函数的微商还是仍然是初等函数，但是初等函数的积分不一定是初等函数</u>。所谓积分就是和的极限，即无限项**连续**相加，而级数为函数无限项**离散**相加，所以从本质上看，这两者有共同点，而且连续和离散之间是可以相互转换的
 
-数项级数即无穷个数$a_n，n=1,2,\dots$相加，表示为$a_1+a_2+\cdots +a_n + \cdots$，$a_n$是实数也可以是复数，这里只讨论实数，令$S_n = a_1+a_2+\cdots +a_n$为级数的部分和，如果$s_n \rightarrow S(n\rightarrow \infty)$，则称级数为==收敛==级数，且收敛于S，否则则称级数是==发散==的。
+数项级数即无穷个数 $a_n，n=1,2,\dots$相加，表示为$a_1+a_2+\cdots +a_n + \cdots$，$a_n$ 是实数也可以是复数，这里只讨论实数，令 $S_n = a_1+a_2+\cdots +a_n$ 为级数的部分和，如果 $S_n \rightarrow S(n\rightarrow \infty)$，则称级数为收敛级数，且收敛于 S ，否则则称级数是发散的。
 
 ####  一些收敛判别法
 
@@ -2204,9 +2208,9 @@ $$
 
 绝对收敛：
 
-如果级数$\vert a_1 \vert +\vert a_2\vert + \cdots +\vert a_n\vert$收敛，则称级数$a_n$绝对收敛，凡是**绝对收敛的级数一定收敛**，有绝对值不等式就可以证明。
+如果级数 $\vert a_1 \vert +\vert a_2\vert + \cdots +\vert a_n\vert$ 收敛，则称级数 $a_n$ 绝对收敛，凡是 **绝对收敛的级数一定收敛** ，有绝对值不等式就可以证明。
 
-还可证明：如果$b_n \ge 0$且$b_n$收敛，若$\vert a_n\vert \le b_n$，则$a_n$绝对收敛
+还可证明：如果 $b_n \ge 0$ 且$b_n$收敛，若 $\vert a_n\vert \le b_n$ ，则 $a_n$ 绝对收敛
 
 1. 柯西判别准则 Cauchy
 
@@ -2214,42 +2218,46 @@ $$
 
 	对任一$\epsilon > 0$，存在正整数$N(\epsilon)$，当$n > m > N$时，$\vert S_n - S_m \vert < \epsilon$成立，即$\vert a_{m+1} + a_{m+1} +\cdots + a_n \vert<\epsilon$成立
 
-2. ==正项级数==的收敛判别法
+2. <u>正项级数</u>的收敛判别法
 
 	这是由单调有界数列必有极限得出
 
 	如果$a_n \ge 0, \vert S_n \vert \le M$当n充分大时成立，则级数收敛
 
-3. 级数收敛的==必要条件==
+3. 级数收敛的<u>必要条件</u>
 
 	在柯西判别准则中使$m = n-1$由$S_n - S_{n-1} = a_n$，所以有若级数收敛，则必须要有$\lim_{n\rightarrow \infty} a_n = 0$
 
-4. 比较判别法
+4. 两个收敛级数
 
-	两个==正项级数==$\sum_{n=1}^\infty a_n, \sum_{n=1}^\infty b_n$，且$a_n \le b_n，(n=1,2,\cdots)$，那么
+  则它们的和与差也收敛
 
-	- 若$\sum_{n=1}^\infty b_n$收敛，则$\sum_{n=1}^\infty a_n$收敛
-	- 若$\sum_{n=1}^\infty a_n$发散，则$\sum_{n=1}^\infty b_n$发散
+5. 比较判别法
 
-5. 根植判别法
+  两个<u>正项级数</u>$\sum_{n=1}^\infty a_n, \sum_{n=1}^\infty b_n$，且$a_n \le b_n，(n=1,2,\cdots)$，那么
 
-	如果级数$\sum_{n=1}^\infty a_n$有$\lim_{n\rightarrow \infty} \vert a_n \vert^{\frac{1}{n}} = r$，则：
+  - 若$\sum_{n=1}^\infty b_n$收敛，则$\sum_{n=1}^\infty a_n$收敛
+  - 若$\sum_{n=1}^\infty a_n$发散，则$\sum_{n=1}^\infty b_n$发散
 
-	- r < 1，级数绝对收敛
-	- r > 1，级数发散
-	- r = 1，不能做出结论
+6. 根植判别法
 
-6. 比值判别法
+  如果级数$\sum_{n=1}^\infty a_n$有$\lim_{n\rightarrow \infty} \vert a_n \vert^{\frac{1}{n}} = r$，则：
 
-	若级数$\sum_{n=1}^\infty a_n$有$\lim_{n\rightarrow \infty} \vert \frac{a_{n+1}}{a_n} \vert = r$，则
+  - r < 1，级数绝对收敛
+  - r > 1，级数发散
+  - r = 1，不能做出结论
 
-	- r < 1，级数绝对收敛
-	- r > 1，级数发散
-	- r = 1，不能做出结论
+7. 比值判别法
 
-7. 对于==正项级数==还可以用==无穷积分==判断其收敛与否
+  若级数$\sum_{n=1}^\infty a_n$有$\lim_{n\rightarrow \infty} \vert \frac{a_{n+1}}{a_n} \vert = r$，则
 
-	设$f(x)$是确定在$x\ge 1$中的==非负、不增==的连续函数，则无穷级数$\sum_{k=1}^\infty f(k)$与无穷积分$\int_1^\infty f(x)dx$同时收敛或同时发散
+  - r < 1，级数绝对收敛
+  - r > 1，级数发散
+  - r = 1，不能做出结论
+
+8. 对于==正项级数==还可以用==无穷积分==判断其收敛与否
+
+  设$f(x)$是确定在$x\ge 1$中的==非负、不增==的连续函数，则无穷级数$\sum_{k=1}^\infty f(k)$与无穷积分$\int_1^\infty f(x)dx$同时收敛或同时发散
 
 #### 条件收敛级数
 
@@ -2408,6 +2416,9 @@ $$
 \sum_{n=0}^\infty a_n x^n\times\sum_{n=0}^\infty b_n x^n = \sum_{n=0}^\infty (\sum_{i=0}^n a_ib_{n-i})x^n
 $$
 
+[**两个幂级数收敛半径的问题**：](https://wenku.baidu.com/view/de3ee51e964bcf84b9d57b7c.html)
+
+<img src="./img/10-31.jpg" style="zoom:67%;" />
 
 #### 泰勒级数
 
@@ -2432,6 +2443,15 @@ f(x)的麦克劳林级数在$x =0$的某个领域收敛，但不一定收敛于$
 一些初等函数的麦克劳林级数：
 
 <img src="E:/Repos/Notes/简明微积分-龚昇-第四版/img/10-13.png" style="zoom:50%;" />
+
+这里的 `arctan x` 的推导很有技巧，使用了从和函数到级数的反向思维
+$$
+f(x) = \arctan x\\
+f'(x) = \frac{1}{1+x^2} =\sum_{n=0}^{\infty} (-1)^n x^{2n} \\
+\therefore f(x) - f(0) = \int_0^x f'(x) dx = \int_0^x \sum_{n=0}^{\infty} (-1)^n x^{2n} dx =  \\
+= \sum_{n=0}^{\infty} (-1)^n \int_0^x x^{2n} dx = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1}
+$$
+
 
 ### 10.4 无穷积分与含参变量积分
 
